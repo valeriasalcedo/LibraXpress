@@ -1,11 +1,11 @@
-import express from 'express';
-import { login, verifySession, logout } from '../controllers/authController.js';
-import { authenticateUser } from '../middlewares/authMiddleware.js';
+const express = require('express');
+const { register, login, logout } = require('../controllers/authControllers');
+const { authenticateUser } = require('../middlewares/authMiddleware');
 
 const router = express.Router();
 
-router.post('/login', login); // Iniciar sesión
-router.get('/verify', authenticateUser, verifySession); // Verificar sesión con JWT
-router.post('/logout', authenticateUser, logout); // Cerrar sesión
+router.post('/registro', register);
+router.post('/acceso', login);
+router.post('/salir', authenticateUser, logout);
 
-export default router;
+module.exports = router;
