@@ -14,3 +14,13 @@ export async function getSession(req, res) {
     }
     res.json({ key, value: req.session[key] });
 }
+
+export async function destroySession(req, res) {
+    req.session.destroy(err => {
+        if (err) {
+            return res.status(500).json({ message: "Error al destruir la sesión" });
+        }
+        res.json({ message: "Sesión eliminada correctamente" });
+    });
+}
+
