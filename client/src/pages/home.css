@@ -9,6 +9,7 @@
     align-items: center;
     color: white; /* Para que el texto sea visible */
     text-align: center;
+    background-attachment: fixed; 
   }
   .text-form-container {
     position: absolute;
@@ -29,7 +30,7 @@
   .subtext {
     font-size: 14px; /* Texto pequeño */
     text-align: left; /* Alineado a la izquierda */
-    color: #231a1a91; /* Color gris oscuro para mejor lectura */
+    color: #f6f6f691; /* Color gris oscuro para mejor lectura */
     margin-top: 10px; /* Espacio superior */
     max-width: 700px; /* Ancho máximo para controlar el texto */
   }

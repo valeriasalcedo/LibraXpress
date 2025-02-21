@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './home.css';
-import bookBackground from '../assets/book.jpg'; // Importamos la imagen
+import bookBackground from '../assets/diseño.jpg'; // Importamos la imagen
 
 const Home = () => {
   const [username, setUsername] = useState('');
