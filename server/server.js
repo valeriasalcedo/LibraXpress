@@ -1,13 +1,19 @@
-import express from "express";
 import dotenv from "dotenv";
-import sessionMiddleware from "./sessions/sessionWrapper.js";
+import express from "express";
+import cors from "cors";
 import mainRoutes from "./routes/mainRoutes.js";
+import sessionMiddleware from "./sessions/sessionwrapper.js";
 
 dotenv.config();
 
 const app = express();
-
 app.use(express.json());
+
+app.use(cors({
+    origin: "http://localhost:3000",
+    credentials: true
+}));
+
 app.use(sessionMiddleware);
 app.use("/", mainRoutes);
 
