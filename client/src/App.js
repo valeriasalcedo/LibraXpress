@@ -1,25 +1,19 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Access from './pages/Access';
-import Register from './pages/Register';
-import Logout from './pages/Logout';
-import Home from './pages/Home';
-import './styles.css';
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import Login from "./components/Login";
+import Register from "./components/Register";
+import Home from "./components/Home";
 
-const App = () => {
-    return (
-        <Router>
-            <Navbar />
-            <Routes>
-                <Route path="/acceso" element={<Access />} />
-                <Route path="/registro" element={<Register />} />
-                <Route path="/home" element={<Home />} />
-                <Route path="/salir" element={<Logout />} />
-                <Route path="/" element={<Navigate to="/acceso" />} />
-            </Routes>
-        </Router>
-    );
-};
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Navigate to="/login" />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/home" element={<Home />} />
+      </Routes>
+    </Router>
+  );
+}
 
 export default App;
