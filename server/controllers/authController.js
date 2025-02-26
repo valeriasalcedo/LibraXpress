@@ -1,29 +1,41 @@
-import { queryDB } from "../db/db.js";
-import { comparePassword } from "../utils/bcryptWrapper.js";
+import { queryDB } from '../db/db.js';
+import bcrypt from 'bcrypt';
 
-export async function login(req, res) {
+// Función para el login
+const login = async (req, res) => {
     const { email, password } = req.body;
+
     if (!email || !password) {
-        return res.status(400).json({ message: "Faltan datos" });
+        return res.status(400).json({ error: 'Todos los campos son obligatorios' });
     }
 
     try {
-        const result = await queryDB("SELECT id, nombre, email, password FROM usuarios WHERE email = $1", [email]);
+        // Consulta SQL para obtener el usuario por email
+        const query = 'SELECT * FROM usuarios WHERE email = $1';
+        const values = [email];
+
+        const result = await queryDB(query, values);
 
         if (result.rows.length === 0) {
-            return res.status(401).json({ message: "Usuario no encontrado" });
+            return res.status(401).json({ error: 'Usuario no encontrado' });
         }
 
         const user = result.rows[0];
-        const validPassword = await comparePassword(password, user.password);
-        if (!validPassword) {
-            return res.status(401).json({ message: "Contraseña incorrecta" });
+
+        // Comparar la contraseña encriptada
+        const isPasswordValid = await bcrypt.compare(password, user.password);
+
+        if (!isPasswordValid) {
+            return res.status(401).json({ error: 'Contraseña incorrecta' });
         }
 
-        req.session.user = { id: user.id, nombre: user.nombre, email: user.email };
-        res.json({ message: "Inicio de sesión exitoso", user: req.session.user });
+        // Si todo está bien, devolver el usuario (sin la contraseña)
+        const { password: _, ...userData } = user; // Excluir la contraseña de la respuesta
+        res.status(200).json(userData);
     } catch (error) {
-        console.error("Error en login:", error);
-        res.status(500).json({ message: "Error en el inicio de sesión" });
+        console.error('Error en login:', error);
+        res.status(500).json({ error: 'Error en el servidor' });
     }
-}
+};
+
+export { login };
