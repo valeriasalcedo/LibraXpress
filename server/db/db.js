@@ -5,16 +5,13 @@ dotenv.config();
 
 const { Pool } = pg;
 
-// Configuración de la conexión a PostgreSQL
-const { Pool } = require('pg');
-
 // Imprimir las variables de entorno para verificar que se están cargando correctamente
 console.log({
-  DB_USER: process.env.DB_USER,
-  DB_PASSWORD: process.env.DB_PASSWORD,
-  DB_HOST: process.env.DB_HOST,
-  DB_NAME: process.env.DB_NAME,
-  DB_PORT: process.env.DB_PORT,
+    DB_USER: process.env.DB_USER,
+    DB_PASSWORD: process.env.DB_PASSWORD,
+    DB_HOST: process.env.DB_HOST,
+    DB_NAME: process.env.DB_NAME,
+    DB_PORT: process.env.DB_PORT,
 });
 
 // Crear el pool de conexiones
@@ -24,8 +21,8 @@ const pool = new Pool({
     host: process.env.DB_HOST || 'localhost',
     database: process.env.DB_NAME || 'LibraXpress',
     port: process.env.DB_PORT || 5432,
-  });
-module.exports = pool;
+});
+
 // Función para ejecutar consultas SQL
 const queryDB = async (query, values) => {
     try {
@@ -37,4 +34,15 @@ const queryDB = async (query, values) => {
     }
 };
 
+// Prueba la conexión a la base de datos
+pool.query('SELECT NOW()', (err, res) => {
+    if (err) {
+        console.error('Error al conectar a la base de datos:', err);
+    } else {
+        console.log('Conexión exitosa a la base de datos:', res.rows[0]);
+    }
+});
+
+// Exporta el pool y la función queryDB
+export default pool;
 export { queryDB };
