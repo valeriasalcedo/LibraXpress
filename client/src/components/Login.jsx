@@ -38,7 +38,7 @@ const Login = () => {
           <input required className="input-login" type="password" name="password" id="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
           <input className="login-button" type="submit" value="Login" />
         </form>
-        <span className="signUp"><a onClick={() => navigate("/register")}>Don't have an account? Sign up</a></span>
+        <span className="signUp"><a onClick={() => navigate("/register")}>Don't have an account? Sign up.</a></span>
       </div>
     </div>
   );

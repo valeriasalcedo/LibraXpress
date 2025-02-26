@@ -39,7 +39,7 @@ const Register = () => {
           <input required className="input-Register" type="password" name="password" id="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
           <input className="Register-button" type="submit" value="Sign Up" />
         </form>
-        <span className="signUp"><a onClick={() => navigate("/login")}>Do you already have an account? Log in</a></span>
+        <span className="signUp"><a onClick={() => navigate("/login")}>Do you already have an account? Log in.</a></span>
       </div>
     </div>
   );

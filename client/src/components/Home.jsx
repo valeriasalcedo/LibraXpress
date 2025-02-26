@@ -30,7 +30,7 @@ const Home = () => {
   return (
     <div className="home-wrapper">
       <div className="container-home">
-        <h1>Welcome, {user?.nombre || "Guest"}!</h1>
+        <h1>Welcome, {user?.nombre || "Invitado"}!</h1>
         <button className="logout-button" onClick={handleLogout}>Logout</button>
       </div>
     </div>
