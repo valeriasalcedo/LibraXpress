@@ -1,0 +1,50 @@
+/* Estilos generales del Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #2c3e50; /* Color de fondo */
+    color: #ecf0f1; /* Color del texto */
+    height: 100vh; /* Altura completa de la ventana */
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Sombra lateral */
+  }
+  
+  /* Título del Sidebar */
+  .sidebar-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #ecf0f1; /* Color del título */
+  }
+  
+  /* Lista de elementos */
+  .sidebar-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Elementos de la lista */
+  .sidebar-item {
+    margin-bottom: 15px;
+  }
+  
+  /* Enlaces */
+  .sidebar-link {
+    text-decoration: none;
+    color: #ecf0f1; /* Color del texto */
+    font-size: 1.1rem;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Transición suave */
+  }
+  
+  /* Efecto hover en los enlaces */
+  .sidebar-link:hover {
+    background-color: #34495e; /* Color de fondo al pasar el mouse */
+  }
+  
+  /* Efecto activo (opcional) */
+  .sidebar-link.active {
+    background-color: #1abc9c; /* Color de fondo para el enlace activo */
+  }
