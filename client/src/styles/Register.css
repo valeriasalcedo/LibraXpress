@@ -1,0 +1,96 @@
+.Register-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f3f4f6;
+  }
+
+  .container-Register{
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    height: 500px;
+    padding: 50px 35px; 
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+  }
+
+  .container-Register:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 15px 40px rgba(26, 71, 250, 0.463);
+  }
+  .heading-Register {
+    text-align: center;
+    font-weight:900;
+    font-size: 45px;
+    color:#8c52ff;
+    margin-top: -12px;
+  }
+  
+  .form-Register{
+    margin-top: 10px;
+  }
+  
+  .form-Register .input-Register {
+    width: 100%;
+    background: white;
+    border: none;
+    padding: 22px 8px;
+    border-radius: 20px;
+    font-size: 0.9rem; 
+    margin-top: 15px;
+    box-shadow: #cff0ff 0px 10px 10px -5px;
+    border-inline: 2px solid transparent;
+  }
+  
+  .form-Register .input-Register::-moz-placeholder {
+    color: rgb(170, 170, 170);
+  }
+  
+  .form-Register .input-Register::placeholder {
+    color: rgb(170, 170, 170);
+  }
+  
+  .form-Register .input-Register:focus {
+    outline: none;
+    border-inline: 2px solid #12B1D1;
+  }
+  
+  .form-Register .Register-button {
+    display: block;
+    width: 150px;
+    font-weight: bold;
+    font-size:medium;
+    background: linear-gradient(45deg,#8c52ff 0%, rgb(18, 177, 209) 100%);
+    color: white;
+    padding-block: 15px;
+    margin: 30px auto;
+    border-radius: 20px;
+    box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 20px 10px -15px;
+    border: none;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .form-Register .Register-button:hover {
+    transform: scale(1.03);
+    box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 23px 10px -20px;
+  }
+  
+  .form-Register .Register-button:active {
+    transform: scale(0.95);
+    box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 15px 10px -10px;
+  }
+  .signUp {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+  }
+  
+  .signUp a {
+    text-decoration: none;
+    color: #0099ff;
+    font-size: 12px;
+  }

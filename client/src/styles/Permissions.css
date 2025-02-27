@@ -1,0 +1,117 @@
+.permissions-wrapper {
+    display: flex;
+    height: 100vh;
+    background-color: #f8f8f8;
+}
+
+.main-sidebar {
+    width: 200px;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    margin-top: 20px; /* Añade margen superior para centrar */
+}
+
+.main-sidebar h3 {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.main-sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.main-sidebar li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.permissions-container {
+    display: flex;
+    flex-grow: 1;
+    padding: 20px;
+    margin-top: 80px;
+}
+
+.permissions-sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    padding-right: 10px;
+    margin-top: 100px; /* Añade margen superior para centrar */
+    margin-left: 70px;
+}
+
+.permissions-sidebar button {
+    background: none;
+    border: none;
+    padding: 10px;
+    font-size: 14px;
+    text-align: left;
+    cursor: pointer;
+    color: #555;
+}
+
+.permissions-sidebar .active {
+    font-weight: bold;
+    color: #000;
+    background-color: #dfdff352; /* Color de fondo que coincide con la tabla */
+    border-radius: 5px;
+}
+
+.permissions-table {
+    flex-grow: 1; /* Evita que crezca demasiado */
+    width: 60%; /* Reduce el ancho total */
+    max-width: 800px; /* Define un tamaño máximo */
+    padding: 15px; /* Reduce el padding */
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    background: #f7f7fa;
+    margin-left: 100px;
+    height: 360px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: #f1f1f1;
+    text-align: left;
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+select {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.allowed, .denied {
+    font-size: 12px; /* Texto más pequeño */
+    padding: 9px 10px; /* Ajuste de relleno */
+    border-radius: 15px; /* Bordes más redondeados */
+    display: inline-block;
+    text-align: center;
+    min-width: 70px; /* Tamaño mínimo para que se vea uniforme */
+    margin-left: 10px;
+    margin-top: 7px;
+
+  }
+  
+  .allowed {
+    background: #a7e8a7; /* Color verde más suave */
+    color: #249c24; /* Verde más fuerte para el texto */
+  }
+  
+  .denied {
+    background: #f4a6a6; /* Color rojo más suave */
+    color: #c72c2c; /* Rojo más fuerte para el texto */
+  }
+  
