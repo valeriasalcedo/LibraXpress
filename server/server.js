@@ -3,7 +3,8 @@ import express from "express";
 import cors from "cors";
 import mainRoutes from "./routes/mainRoutes.js";
 import sessionMiddleware from "./sessions/sessionwrapper.js";
-import { queryDB } from "./db/db.js"; // Importa la función queryDB
+import { queryDB } from "./db/db.js"; 
+import usuariosRouter from './routes/usuarios.js';
 
 // Configura dotenv para cargar variables de entorno
 dotenv.config();
@@ -25,6 +26,8 @@ app.use(sessionMiddleware);
 
 // Usa las rutas principales
 app.use("/", mainRoutes);
+
+app.use('/api/usuarios', usuariosRouter);
 
 // Función para probar la conexión a la base de datos
 const testConnection = async () => {

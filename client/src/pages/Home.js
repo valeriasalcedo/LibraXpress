@@ -9,35 +9,31 @@ const Home = () => {
   const [error, setError] = useState('');
   const navigate = useNavigate(); // Define navigate
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
-
-    if (!email || !password) {
-      setError('Por favor ingresa correo electrónico y contraseña.');
-      return;
-    }
-
+  const handleLogin = async (email, password) => {
     try {
-      const response = await fetch('http://localhost:5000/login', {
+      const response = await fetch('http://localhost:5000/api/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email, password }), // Solo envía email y password
+        body: JSON.stringify({ email, password }),
       });
-
+  
       if (!response.ok) {
-        throw new Error(`Error: ${response.status} - ${response.statusText}`);
+        throw new Error('Credenciales incorrectas');
       }
-
+  
       const data = await response.json();
-      console.log('Respuesta del servidor:', data);
-
-      // Si el inicio de sesión es exitoso, redirige al usuario
-      navigate('/dashboard');
+      const user = data.user; // Asume que el backend devuelve el usuario en data.user
+  
+      // Guardar el usuario en localStorage
+      localStorage.setItem('user', JSON.stringify(user));
+  
+      // Redirigir al usuario a la página de mantenimiento
+      navigate('/user-maintenance');
     } catch (error) {
-      console.error('Error en login:', error);
-      setError('Hubo un error al iniciar sesión. Por favor, inténtalo de nuevo.');
+      console.error('Error al iniciar sesión:', error);
+      alert('Error al iniciar sesión. Verifica tus credenciales.');
     }
   };
 
