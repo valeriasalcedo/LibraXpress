@@ -1,0 +1,171 @@
+/* UserMaintenance.css */
+.container {
+    width: 90%;
+    margin: 20px auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  h2 {
+    text-align: left;
+    color: #444;
+  }
+  
+  /* Estilo de pestañas para filtrar por perfil */
+  .tab-filter {
+    display: flex;
+    background-color: #fafafa;
+    border-radius: 8px;
+    overflow: hidden;
+    width: fit-content;
+    margin-bottom: 15px;
+  }
+  
+  .tab {
+    padding: 8px 15px;
+    border: none;
+    background: #f8f8f8;
+    cursor: pointer;
+    color: #888;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  .tab:not(:last-child) {
+    border-right: 1px solid #ddd;
+  }
+  
+  .tab.active {
+    background: white;
+    color: black;
+    font-weight: bold;
+  }
+  
+  .tab:hover {
+    background: #ececec;
+  }
+  
+  .user-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .user-table th, .user-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .user-table th {
+    background-color: #f8f8f8;
+    font-weight: bold;
+  }
+  
+  .user-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .user-table input[type="checkbox"] {
+    transform: scale(1.2);
+  }
+  
+  /* Estilo del dropdown */
+  .profile-dropdown {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #fff;
+    cursor: pointer;
+  }
+  
+  .profile-dropdown:focus {
+    outline: none;
+    border-color: #007bff;
+  }
+  .top-section {
+    display: flex;
+    justify-content: space-between; /* Espacio entre filtros y botones */
+    align-items: center;
+    margin-bottom: 0px;
+  }
+  
+  .button-group {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .icon-button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 12px;
+    background-color: #96bbe3;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  .icon-button:hover {
+    background-color: #0057b3;
+  }
+  .actions-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  /* Estilos para la barra de búsqueda */
+  .search-bar {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 220px;
+    outline: none;
+  }
+  
+/* Contenedor de botones */
+/* Contenedor de botones - alineado a la derecha */
+.button-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  
+  /* Estilos generales de los botones */
+  .btn {
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+  
+  /* Estilos específicos para cada botón */
+  .add-button,
+  .edit-button,
+  .delete-button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #436e9d;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .add-button:hover,
+  .edit-button:hover,
+  .delete-button:hover {
+    background-color: #0056b3;
+  }
+  /* Efectos hover */
+  .btn:hover {
+    opacity: 0.8;
+  }
+    

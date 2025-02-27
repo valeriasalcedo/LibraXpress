@@ -1,0 +1,45 @@
+.sidebar {
+    width: 250px;
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    position: fixed; /* Fija el Sidebar en su posición */
+    top: 0; /* Lo pega al borde superior */
+    left: 0; /* Lo pega al borde izquierdo */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra el contenido verticalmente */
+  }
+  
+  .sidebar-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .sidebar-list {
+    list-style: none;
+    padding: 0;
+    margin: 0; /* Elimina el margen predeterminado */
+  }
+  
+  .sidebar-item {
+    margin-bottom: 15px;
+    text-align: center; /* Centra el texto horizontalmente */
+  }
+  
+  .sidebar-link {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 1.1rem;
+    display: block;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .sidebar-link:hover {
+    background-color: #34495e;
+  }
